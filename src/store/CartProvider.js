@@ -52,21 +52,22 @@ const cartReducer = (state, action) => {
     };
 
     return defaultCartState;
-};
+}
 
 const CartProvider = props => {
     const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
 
     const addItemToCartHandler = item => {
         dispatchCartAction({ type: 'ADD', item: item })
-    };
+    }
+
     const removeItemFromCartHandler = id => {
         dispatchCartAction({ type: 'REMOVE', id: id })
-    };
+    }
 
     const clearCartHandler = () => {
         dispatchCartAction({ type: 'CLEAR' });
-    };
+    }
 
     const cartContext = {
         items: cartState.items,
@@ -81,6 +82,6 @@ const CartProvider = props => {
             {props.children}
         </CartContext.Provider>
     );
-};
+}
 
 export default CartProvider;

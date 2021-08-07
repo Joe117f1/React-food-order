@@ -20,15 +20,15 @@ const Cart = props => {
 
     const addCartItemHandler = item => {
         cartCtx.addItem({ ...item, amount: 1 });
-    };
+    }
 
     const removeCartItemHamdler = id => {
         cartCtx.removeItem(id);
-    };
+    }
 
     const orderHandler = () => {
         setIsCheckout(true);
-    };
+    }
 
     const { sendRequest: confirmOrder } = useHttp();
 
@@ -49,29 +49,33 @@ const Cart = props => {
         setIsSubmitting(false);
         setDidIsSubmitted(true);
         cartCtx.clearCart();
-    };
+    }
 
-    const cartrItems = <ul className={classes['cart-items']}>
-        {cartCtx.items.map(item =>
-            <CartItem
-                key={item.id}
-                name={item.name}
-                amount={item.amount}
-                price={item.price}
-                onAddItem={addCartItemHandler.bind(null, item)}
-                onRemoveItem={removeCartItemHamdler.bind(null, item.id)}
-            />
-        )}
-    </ul>;
+    const cartrItems = (
+        <ul className={classes['cart-items']}>
+            {cartCtx.items.map(item =>
+                <CartItem
+                    key={item.id}
+                    name={item.name}
+                    amount={item.amount}
+                    price={item.price}
+                    onAddItem={addCartItemHandler.bind(null, item)}
+                    onRemoveItem={removeCartItemHamdler.bind(null, item.id)}
+                />
+            )}
+        </ul>
+    );
 
-    const modalActions = <div className={classes.actions}>
-        <button className={classes['button--alt']} onClick={props.onToggleCart}>
-            Close
-        </button>
-        {hasItems && <button className={classes.button} onClick={orderHandler} >
-            Order
-        </button>}
-    </div>
+    const modalActions = (
+        <div className={classes.actions}>
+            <button className={classes['button--alt']} onClick={props.onToggleCart}>
+                Close
+            </button>
+            {hasItems && <button className={classes.button} onClick={orderHandler} >
+                Order
+            </button>}
+        </div>
+    );
 
     const modalContent = (
         <Fragment>
@@ -83,7 +87,7 @@ const Cart = props => {
             {isCheckout && <Checkout onSubmitOrder={submitOrderHandler} onCancel={props.onToggleCart} />}
             {!isCheckout && modalActions}
         </Fragment>
-        );
+    );
 
     const isSubmittingModalContent = <p>Sending your order...</p>;
     const didSubmittedModalContent = (
@@ -104,6 +108,6 @@ const Cart = props => {
             {!isSubmitting && didSubmitted && didSubmittedModalContent}
         </Modal>
     );
-};
+}
 
 export default Cart;

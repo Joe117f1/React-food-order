@@ -8,16 +8,16 @@ const useInput = (validateValue) => {
 
     const inputChangeHandler = ev => {
         setEnteredValue(ev.target.value);
-    };
+    }
 
     const inputBlurHandler = () => {
         setIsInputTouched(true);
-    };
+    }
 
     const clearInput = () => {
         setEnteredValue('');
         setIsInputTouched(false);
-    };
+    }
 
     return {
         value: enteredValue,
@@ -27,6 +27,6 @@ const useInput = (validateValue) => {
         inputBlurHandler,
         clearInput,
     };
-};
+}
 
 export default useInput;

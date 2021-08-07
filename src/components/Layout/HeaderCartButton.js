@@ -23,7 +23,7 @@ const HeaderCartButton = props => {
 
         return () => {
             clearTimeout(timer);
-        };
+        }
     }, [items]);
 
     return (
@@ -35,6 +35,6 @@ const HeaderCartButton = props => {
             <span className={classes.badge}>{numberOfItemsInCart}</span>
         </button>
     );
-};
+}
 
 export default HeaderCartButton;

@@ -14,7 +14,7 @@ const MealItem = props => {
             amount: amount,
             price: props.price
         });
-    };
+    }
 
     return (
         <li className={classes.meal}>
@@ -28,6 +28,6 @@ const MealItem = props => {
             </div>
         </li>
     );
-};
+}
 
 export default MealItem;

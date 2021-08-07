@@ -5,7 +5,7 @@ import classes from './Modal.module.css';
 
 const Backdrop = props => {
     return <div className={classes.backdrop} onClick={props.onToggleCart} />;
-};
+}
 
 const ModalOverlay = props => {
     return (
@@ -13,7 +13,7 @@ const ModalOverlay = props => {
             <div className={classes.content}>{props.children}</div>
         </div>
     );
-};
+}
 
 const portalElement = document.getElementById('overlay');
 
@@ -26,6 +26,6 @@ const Modal = props => {
             </ModalOverlay>, portalElement)}
         </Fragment>
     );
-};
+}
 
 export default Modal;

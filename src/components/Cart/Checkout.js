@@ -62,7 +62,7 @@ const Checkout = props => {
         clearStreetInput();
         clearCityInput();
         clearCardInput();
-    };
+    }
 
     const nameControlClasses = `${classes.control}
      ${!nameHasError ? '' : classes.invalid}`;
@@ -113,11 +113,11 @@ const Checkout = props => {
             <div className={classes.actions}>
                 <button type='button' onClick={props.onCancel}>
                     Cancel
-        </button>
+                </button>
                 <button className={classes.submit}>Confirm</button>
             </div>
         </form>
     );
-};
+}
 
 export default Checkout;

@@ -21,9 +21,9 @@ const AvailableMeals = () => {
                     description: dataObj[key].description,
                     price: dataObj[key].price,
                 });
-            };
+            }
             setMeals(loadedMeals);
-        };
+        }
         fetchMeals({ url: firebase_api }, transformMealData);
     }, [fetchMeals]);
 
@@ -42,10 +42,10 @@ const AvailableMeals = () => {
     let content = <ul>{mealsList}</ul>
     if (hasError) {
         content = <ul>{hasError}</ul>
-    };
+    }
     if (isLoading) {
         content = <ul>Loading...</ul>
-    };
+    }
 
     return (
         <section className={classes.meals}>
@@ -54,6 +54,6 @@ const AvailableMeals = () => {
             </Card>
         </section>
     );
-};
+}
 
 export default AvailableMeals;

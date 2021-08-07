@@ -16,7 +16,7 @@ const useHttp = () => {
 
             if (!response.ok) {
                 throw new Error('Cannot upload page');
-            };
+            }
             const data = await response.json();
             dataFunc(data);
 
@@ -31,6 +31,6 @@ const useHttp = () => {
         error,
         sendRequest,
     };
-};
+}
 
 export default useHttp;

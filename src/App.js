@@ -10,12 +10,12 @@ const App = () => {
 
   const toggleCartHandler = () => {
     !isCartShown ? setIsCartShown(true) : setIsCartShown(false);
-  }
+  };
 
   const toggleConfirmOrderHandler = () => {
     !isInOrder ? setIsInOrder(true) : setIsInOrder(false);
     setIsCartShown(!isCartShown);
-  }
+  };
 
   return (
     <CartProvider>
@@ -29,6 +29,6 @@ const App = () => {
       </main>
     </CartProvider>
   );
-}
+};
 
 export default App;

@@ -18,6 +18,6 @@ const CartItem = (props) => {
       </div>
     </li>
   );
-}
+};
 
 export default CartItem;
